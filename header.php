@@ -1,10 +1,10 @@
 <!--
-███╗   ███╗██████╗  ██████╗██╗    ██╗██████╗ 
+███╗   ███╗██████╗  ██████╗██╗    ██╗██████╗
 ████╗ ████║██╔══██╗██╔════╝██║    ██║██╔══██╗
 ██╔████╔██║██║  ██║██║     ██║ █╗ ██║██████╔╝
-██║╚██╔╝██║██║  ██║██║     ██║███╗██║██╔═══╝ 
-██║ ╚═╝ ██║██████╔╝╚██████╗╚███╔███╔╝██║     
-╚═╝     ╚═╝╚═════╝  ╚═════╝ ╚══╝╚══╝ ╚═╝     
+██║╚██╔╝██║██║  ██║██║     ██║███╗██║██╔═══╝
+██║ ╚═╝ ██║██████╔╝╚██████╗╚███╔███╔╝██║
+╚═╝     ╚═╝╚═════╝  ╚═════╝ ╚══╝╚══╝ ╚═╝
 Sooo, wanna look at the source code? Hmm?
 -->
 <!DOCTYPE html>
@@ -18,9 +18,9 @@ Sooo, wanna look at the source code? Hmm?
 			<style>.mat-toolbar--search {position:absolute;}</style>
 		<?php } ?>
 	</head>
-	
-	<body <?php global $post; if(get_post_meta( $post->ID, '_mdcwp_immersive_mode_value_key', true )) { $is_immersive = 'mdcwp--immersive-mode'; } body_class($is_immersive);?>>
-	
+
+	<body <?php global $post; if(get_post_meta( $post->ID, '_mdcwp_immersive_mode_value_key', true )) { $is_immersive = 'mdcwp--immersive-mode'; } body_class($is_immersive ?? '');?>>
+
 	<div class="mdcwp-progressbar">
 		<div role="progressbar" class="mdc-linear-progress mdc-linear-progress--indeterminate">
 			<div class="mdc-linear-progress__buffering-dots"></div>
@@ -33,7 +33,7 @@ Sooo, wanna look at the source code? Hmm?
 			</div>
 		</div>
 	</div>
-	
+
 	<header class="mdc-toolbar <?php if(!get_post_meta( $post->ID, '_mdcwp_immersive_mode_value_key', true )) { echo 'mdc-toolbar--fixed mdc-toolbar--waterfall'; } ?>" id="default-toolbar" data-mdc-auto-init="MDCToolbar" <?php if(get_post_meta( $post->ID, '_mdcwp_immersive_mode_value_key', true )) { echo 'style="position:absolute;"'; } ?>>
 		<div class="mdc-toolbar__row">
 			<section class="mdc-toolbar__section mdc-toolbar__section--align-start">
@@ -72,12 +72,12 @@ Sooo, wanna look at the source code? Hmm?
 					$object_id = $post->ID;
 				}
 
-				// test if the specified page is in the menu or not. return true or false. 
+				// test if the specified page is in the menu or not. return true or false.
 				return (in_array( (string)$object_id, $menu_items )) || (in_array( 'Home', $home ) && is_front_page());
 			}
 			$menu_tab = wp_nav_menu(array('echo'=>false, 'fallback_cb'=>'__return_false', 'theme_location'=>'tabmenu')); if ( ! empty ($menu_tab) && cms_is_in_menu( 'tabmenu' )) {echo '<div class="mdc-toolbar__row mat-toolbar__row--tab-bar"><section class="mdc-toolbar__section mat-toolbar--tab-bar__section"><nav class="mdc-tab-bar mat-tab-bar" data-mdc-auto-init="MDCTabBar">'; wp_nav_menu(array('container'=>false, 'theme_location'=>'tabmenu', 'items_wrap' => '%3$s', 'walker'=>new Walker_mdcwp_tab())); echo '<span class="mdc-tab-bar__indicator"></span></nav></section></div>';} ?>
     </header>
-	
+
 	<header class="mdc-toolbar mat-toolbar--search" data-mdc-auto-init="MDCToolbar" style="visibility: hidden; background-color: transparent;">
 		<div class="mdc-toolbar__row mat-toolbar--search-container">
 			<section class="mdc-toolbar__section mdc-toolbar__section--align-start">
@@ -90,5 +90,5 @@ Sooo, wanna look at the source code? Hmm?
 			</section>
 		</div>
     </header>
-	
+
 	<?php get_template_part('content', 'drawer'); ?>
