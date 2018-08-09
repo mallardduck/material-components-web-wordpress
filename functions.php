@@ -183,11 +183,15 @@ function material_press_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'material_press_scripts' );
 
-
 /**
  * Implement the Custom Header feature.
  */
 require get_template_directory() . '/inc/custom-header.php';
+
+/**
+ * Custom functions that act independently of the theme templates.
+ */
+require get_theme_file_path( '/inc/extras.php' );
 
 /**
  * Customizer additions.
