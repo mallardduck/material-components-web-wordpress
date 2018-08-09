@@ -1,6 +1,6 @@
 <?php
-class Walker_mdcwp_drawer extends Walker_Nav_menu {
-	function start_lvl(&$output, $depth) {
+class Walker_mdcwp_drawer extends Walker_Nav_Menu {
+	function start_lvl(&$output, $depth = 0, $args = []) {
 		$indent = str_repeat("\t", $depth);
 		$output .= "\n$indent\n";
 	}
@@ -12,7 +12,7 @@ class Walker_mdcwp_drawer extends Walker_Nav_menu {
 
 		$classes = empty( $item->classes ) ? array() : (array) $item->classes;
 		$classes[] = 'menu-item-' . $item->ID;
-		
+
 		$item->icon = get_post_meta($item->ID, 'menu-item-field_icon', true);
 
 		$class_names = join( ' ', apply_filters( 'nav_menu_css_class', array_filter( $classes ), $item, $args ) );

@@ -1,6 +1,6 @@
 <?php
-class Walker_mdcwp_tab extends Walker_Nav_menu {
-	function start_lvl(&$output, $depth) {
+class Walker_mdcwp_tab extends Walker_Nav_Menu {
+	function start_lvl(&$output, $depth = 0, $args = []) {
 		$indent = str_repeat("\t", $depth);
 		$output .= "\n$indent\n";
 	}
