@@ -183,6 +183,12 @@ function material_press_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'material_press_scripts' );
 
+
+/**
+ * Implement the Custom Header feature.
+ */
+require get_template_directory() . '/inc/custom-header.php';
+
 /**
  * Customizer additions.
  */
@@ -221,18 +227,6 @@ function SearchFilter($query) {
 	return $query;
 }
 add_filter('pre_get_posts','SearchFilter');
-
-/*
-	==========================================
-	  Theme support function
-	==========================================
-*/
-$defaults = array(
-	'default-image' => get_template_directory_uri() . '/images/header.jpg',
-	'uploads' => true,
-	'header-text' => false
-);
-add_theme_support( 'custom-header', $defaults);
 
 /*
 	==========================================
