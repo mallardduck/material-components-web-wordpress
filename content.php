@@ -1,5 +1,7 @@
 <div class="mdc-card mdcwp-card mdcwp-card--with-avatar">
 
+	<?php material_press_post_thumbnail(); ?>
+
 	<?php global $post; if(!get_post_meta( $post->ID, '_mdcwp_metadata_value_key', true )) { ?>
 	<section class="mdc-card__primary mdc-card__meta">
 		<?php echo get_avatar( get_the_author_meta( 'ID' ), 40, 'retro', sprintf( "%s's Avatar", get_the_author_meta( 'display_name' ) ), array('class'=>'mdcwp-card__avatar')); ?>
@@ -7,8 +9,6 @@
 		<h2 class="mdc-card__subtitle mdc-card__subtitle-meta"><?php the_time('F j, Y'); ?></h2>
 	</section>
 	<?php } ?>
-
-	<?php if (has_post_thumbnail()) { ?><section class="mdc-card__media mdcwp-card__16-9-media" style="background-image: url(<?php the_post_thumbnail_url(); ?>);"></section><?php } ?>
 
 	<section class="mdc-card__primary">
 		<?php the_title( sprintf('<h1 class="mdc-card__title mdc-card__title--large"><a href="%s" style="text-decoration: none; color: var(--mdc-theme-primary, #3f51b5);">', esc_url( get_permalink() ) ),'</a></h1>' ); ?>

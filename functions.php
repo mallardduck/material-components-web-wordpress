@@ -189,6 +189,11 @@ add_action( 'wp_enqueue_scripts', 'material_press_scripts' );
 require get_template_directory() . '/inc/custom-header.php';
 
 /**
+ * Custom template tags for this theme.
+ */
+require get_template_directory() . '/inc/template-tags.php';
+
+/**
  * Custom functions that act independently of the theme templates.
  */
 require get_theme_file_path( '/inc/extras.php' );
@@ -197,6 +202,11 @@ require get_theme_file_path( '/inc/extras.php' );
  * Customizer additions.
  */
 require get_template_directory() . '/inc/customizer.php';
+
+// Include Nav Walkers
+require get_template_directory() . '/inc/drawer-walker.php';
+require get_template_directory() . '/inc/tab-walker.php';
+require get_template_directory() . '/inc/menu-walker.php';
 
 /*
 	==========================================
@@ -241,15 +251,6 @@ function modify_read_more_link() {
 	return '<br><br><a class="mdc-button mdc-button--raised mdc-button--primary" href="' . get_permalink() . '">Read more</a>';
 }
 add_filter( 'the_content_more_link', 'modify_read_more_link' );
-
-/*
-	==========================================
-	  Include Walker file
-	==========================================
-*/
-require get_template_directory() . '/inc/drawer-walker.php';
-require get_template_directory() . '/inc/tab-walker.php';
-require get_template_directory() . '/inc/menu-walker.php';
 
 /*
 	==========================================
