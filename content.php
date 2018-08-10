@@ -4,7 +4,7 @@
 
 	<?php global $post; if(!get_post_meta( $post->ID, '_mdcwp_metadata_value_key', true )) { ?>
 	<section class="mdc-card__primary mdc-card__meta">
-		<?php echo get_avatar( get_the_author_meta( 'ID' ), 40, 'retro', sprintf( "%s's Avatar", get_the_author_meta( 'display_name' ) ), array('class'=>'mdcwp-card__avatar')); ?>
+		<?php material_press_author_avatar(); ?>
 		<h1 class="mdc-card__title mdc-card__title-meta"><?php the_author_posts_link(); ?></h1>
 		<h2 class="mdc-card__subtitle mdc-card__subtitle-meta"><?php the_time('F j, Y'); ?></h2>
 	</section>

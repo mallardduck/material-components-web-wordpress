@@ -1,7 +1,7 @@
 <div class="mdc-card mdcwp-card mdcwp-card--with-avatar mdcwp-ribbon__content">
 	<div class="mdc-card__horizontal-block">
 		<section class="mdc-card__primary mdc-card__meta mdc-card__padding-adjust">
-			<?php echo get_avatar( get_the_author_meta( 'ID' ), 32, $default, $alt, array('class'=>'mdcwp-card__avatar')); ?>
+			<?php material_press_author_avatar(); ?>
 			<h1 class="mdc-card__title mdc-card__title-meta"><?php the_author_posts_link(); ?></h1>
 			<h2 class="mdc-card__subtitle mdc-card__subtitle-meta"><?php the_time('F j, Y'); ?></h2>
 		</section>

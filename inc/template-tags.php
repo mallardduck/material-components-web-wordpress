@@ -136,3 +136,15 @@ if ( ! function_exists( 'material_press_post_thumbnail' ) ) :
 		endif; // End is_singular().
 	}
 endif;
+
+if ( ! function_exists( 'material_press_author_avatar' ) ) :
+	/**
+	 * Displays the aurthors avatar for the post.
+	 */
+	function material_press_author_avatar() {
+		$altText = sprintf( "%s's Avatar", get_the_author_meta( 'display_name' ) );
+		$args = array('class'=>'mdcwp-card__avatar');
+
+		echo get_avatar( get_the_author_meta( 'ID' ), 40, 'retro', $altText, $args);
+	}
+endif;
