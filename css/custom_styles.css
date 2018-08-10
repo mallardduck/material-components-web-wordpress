@@ -6,11 +6,11 @@
 	* {
 		-webkit-tap-highlight-color: transparent;
 	}
-	
+
 	html {
 		height: 100%;
 	}
-	
+
 	body {
 		padding: 0;
 		margin: 0;
@@ -19,11 +19,11 @@
 		visibility: hidden;
 		height: 100%;
     }
-	
+
     main {
 		margin: 0px;
     }
-	
+
 	a {
 		text-decoration: none;
 		color: var(--mdc-theme-primary);
@@ -38,7 +38,7 @@
 		cursor: pointer;
 		text-decoration: none;
 	}
-	
+
 	/*
 		==============================
 		   Material Design Scrollbar
@@ -67,7 +67,7 @@
 	}
 	*::-webkit-scrollbar-track:vertical{-webkit-box-shadow:inset 1px 1px 0 rgba(0,0,0,0.14),inset -1px -1px 0 rgba(0,0,0,0.07);}
 	*::-webkit-scrollbar-track:vertical:hover{background-color:rgba(0,0,0,0.035);}
-	
+
 	/*
 		==============================
 		  Drawer Component
@@ -77,7 +77,7 @@
 		width: calc(100% - 56px);
 		max-width: 305px;
 	}
-	
+
 	/*
 		==============================
 		  MDC-WP Ripple Effect
@@ -89,7 +89,7 @@
 		padding: 0;
 		position: absolute;
     }
-	
+
 	/*
 		==============================
 		  Search Component
@@ -204,7 +204,7 @@
 			clip-path: circle(0 at calc(100% - var(--mat-toolbar--search-location)) 50%);
 		}
 	}
-	
+
 	/*
 		==============================
 		  Menu Component
@@ -214,7 +214,7 @@
 		top: 6px;
 		right: 6px;
 	}
-	
+
 	/*
 		==============================
 		  MDC-WP Card Component
@@ -276,7 +276,7 @@
 			margin: 0 auto;
 		}
 	}
-	
+
 	/*
 		==============================
 		  Toolbar Component
@@ -319,9 +319,9 @@
 		}
 	}
 	.mdcwp-ribbon__card {
-		margin-top: -6.5rem;
+		margin-top: 6.5rem;
 	}
-	
+
 	/*
 		==============================
 		  MDC-WP Footer Component
@@ -355,7 +355,7 @@
 	.mdcwp-footer__bottom-section {
 		margin-right: 30px;
 	}
-	
+
 	/*
 		==============================
 		  Pagination
@@ -370,7 +370,7 @@
 	.mdcwp-pagination__button {
 		background-color: White;
 	}
-	
+
 	/*
 		==============================
 		  404 error page
@@ -379,7 +379,7 @@
 	.searchform {
 		height: 100%;
 	}
-	
+
 	/*
 		==============================
 		  Comments section
@@ -452,7 +452,7 @@
 	.comment-edit-link {
 		color: Black;
 	}
-	
+
 	/*
 		==============================
 		  Tab Bar Component
@@ -471,7 +471,7 @@
 		min-height: 48px;
 		transition: margin 300ms;
 	}
-	
+
 	/*
 		==============================
 		  MDC-WP Progress Bar Component
@@ -485,7 +485,7 @@
 		flex-direction: column;
 		justify-content: center;
 	}
-	
+
 	/*
 		==============================
 		  Immersive Mode
@@ -498,7 +498,7 @@
 		position: sticky;
 		padding-top: 12rem;
 	}
-	
+
 	/*
 		==============================
 		  Content
@@ -507,7 +507,7 @@
 	.mat-toolbar-adjust {
 		transition: margin 300ms;
 	}
-	
+
 	/*
 		==============================
 		  Margin Animation
@@ -516,14 +516,14 @@
 	.mat-margin-animation {
 		margin-top: -48px;
 	}
-	
+
 	/*
 		==============================
 		  External links
 		==============================
 	*/
-	.mdcwp--link-external[href^="//"]:after, 
-	.mdcwp--link-external[href^="http://"]:after, 
+	.mdcwp--link-external[href^="//"]:after,
+	.mdcwp--link-external[href^="http://"]:after,
 	.mdcwp--link-external[href^="https://"]:after {
     	content: " \e895";
     	font-family: 'Material Icons';
